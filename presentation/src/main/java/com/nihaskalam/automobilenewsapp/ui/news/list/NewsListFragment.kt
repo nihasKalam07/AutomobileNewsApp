@@ -15,17 +15,16 @@ import com.nihaskalam.automobilenewsapp.ui.base.BaseFragment
 import com.nihaskalam.automobilenewsapp.ui.databinding.FragmentListNewsBinding
 import com.nihaskalam.automobilenewsapp.ui.showToasts
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class NewsListFragment : BaseFragment() {
     private val viewModel: NewsListViewModel by viewModels()
+    @Inject
+    lateinit var newsAdapterFactory: NewsAdapter.NewsAdapterFactory
 
     private lateinit var binding: FragmentListNewsBinding
     private lateinit var adapter: NewsAdapter
-
-    companion object {
-        fun newInstance() = NewsListFragment()
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,7 +39,7 @@ class NewsListFragment : BaseFragment() {
 
     override fun initUi() {
         binding.let {
-            adapter = NewsAdapter(arrayListOf(), onNewsItemClick)
+            adapter = newsAdapterFactory.create(arrayListOf(), onNewsItemClick)
             it.newsRv.adapter = adapter
             it.swipeRefreshLayout
             it.swipeRefreshLayout.setOnRefreshListener {
