@@ -48,6 +48,7 @@ object Versions {
     const val hiltCompilerVersion = "2.40.5"
     const val hiltViewModelVersion = "1.0.0-alpha03"
     const val hiltAndroidXCompilerVersion = "1.0.0"
+    const val hiltTestingVersion = "2.38.1"
 
     //test libs
     const val junitVersion = "4.13.2"
@@ -96,6 +97,7 @@ object Deps {
     const val hiltACompiler = "com.google.dagger:hilt-android-compiler:${Versions.hiltCompilerVersion}"
     const val hiltAndroidXCompiler = "androidx.hilt:hilt-compiler:${Versions.hiltAndroidXCompilerVersion}"
     const val hiltViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltViewModelVersion}"
+    const val hiltTesting = "com.google.dagger:hilt-android-testing:${Versions.hiltTestingVersion}"
 
     //miscellaneous
     const val glide = "com.github.bumptech.glide:glide:${Versions.glideVersion}"

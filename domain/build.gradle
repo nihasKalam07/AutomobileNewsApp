@@ -45,6 +45,7 @@ dependencies {
     testImplementation Deps.junit
     testImplementation Deps.coroutineTest
     testImplementation Deps.mockitoCore
+    testImplementation Deps.hiltTesting
     testImplementation Deps.androidXCoreTest
     androidTestImplementation Deps.uiTestJunit
     androidTestImplementation Deps.espresso

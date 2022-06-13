@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.nihaskalam.automobilenewsapp.domain.model.Data
 import com.nihaskalam.automobilenewsapp.domain.model.NetworkResult
@@ -53,7 +51,7 @@ class NewsListFragment : BaseFragment() {
 
             binding.swipeRefreshLayout.isRefreshing = when (result) {
                 is NetworkResult.ApiSuccess -> {
-                    result.newsList.let {
+                    result.newsFeed.let {
                         adapter.update(it.data.take(10))
                     }
                     false
