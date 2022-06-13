@@ -77,11 +77,8 @@ class NewsListFragment : BaseFragment() {
     }
 
     private val onNewsItemClick: (newsItem: Data, view: View) -> Unit =
-        { newsItem, view ->
+        { newsItem, _ ->
             val directions = NewsListFragmentDirections.actionNewsToDetails(newsItem)
-            val extras = FragmentNavigatorExtras(
-                view to newsItem.imageUrl
-            )
-            findNavController().navigate(directions, extras)
+            findNavController().navigate(directions)
         }
 }

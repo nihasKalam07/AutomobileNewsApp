@@ -28,7 +28,6 @@
                 android:layout_height="@dimen/dimen_150dp"
                 android:contentDescription="@string/app_name"
                 android:scaleType="centerCrop"
-                android:transitionName="@{newsItem.imageUrl}"
                 app:imageUrl="@{newsItem.imageUrl}"
                 app:layout_constraintBottom_toTopOf="@id/titleTV"
                 app:layout_constraintEnd_toEndOf="parent"
