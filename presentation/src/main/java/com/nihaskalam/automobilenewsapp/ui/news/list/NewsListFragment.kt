@@ -47,7 +47,7 @@ class NewsListFragment : BaseFragment() {
     }
 
     override fun observeData() {
-        viewModel.newsFeedList.observe(viewLifecycleOwner) { result ->
+        viewModel.newsObj.observe(viewLifecycleOwner) { result ->
 
             binding.swipeRefreshLayout.isRefreshing = when (result) {
                 is NetworkResult.ApiSuccess -> {

@@ -14,8 +14,8 @@ import javax.inject.Inject
 @HiltViewModel
 class NewsListViewModel @Inject constructor(private val getNews: GetNewsUseCase): BaseViewModel() {
 
-    private val _newsFeedList = MutableLiveData<NetworkResult<NewsFeed>>()
-    val newsFeedList: LiveData<NetworkResult<NewsFeed>> = _newsFeedList
+    private val _newsObj = MutableLiveData<NetworkResult<NewsFeed>>()
+    val newsObj: LiveData<NetworkResult<NewsFeed>> = _newsObj
 
     init {
         getNewsFeeds()
@@ -27,7 +27,7 @@ class NewsListViewModel @Inject constructor(private val getNews: GetNewsUseCase)
     fun getNewsFeeds() {
         viewModelScope.launch {
             getNews().collect {
-                _newsFeedList.value = it
+                _newsObj.value = it
             }
         }
     }
