@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs'
+}
+
+android {
+    compileSdk BuildConfigVersions.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.nihaskalam.automobilenewsapp.ui"
+        minSdk BuildConfigVersions.minSdkVersion
+        targetSdk BuildConfigVersions.targetSdkVersion
+        versionCode BuildConfigVersions.versionCode
+        versionName BuildConfigVersions.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+}
+
+dependencies {
+    implementation project(path: ':data')
+    implementation project(path: ':domain')
+
+    //androidX
+    implementation Deps.coreKtx
+    implementation Deps.appCompat
+    implementation Deps.constraintLayout
+    implementation Deps.liveData
+    implementation Deps.viewModel
+    implementation Deps.activityKtx
+    implementation Deps.swipeRefreshLayout
+    implementation Deps.navigationFragment
+    implementation Deps.navigationUi
+    implementation Deps.lifecycleExtensions
+    implementation Deps.material
+    //coroutine
+    implementation Deps.coroutines
+    //hilt
+    implementation Deps.hiltAndroid
+    kapt Deps.hiltAndroidXCompiler
+    implementation Deps.hiltViewModel
+    kapt Deps.hiltACompiler
+    //glide
+    implementation Deps.glide
+    annotationProcessor Deps.glideAnnotationProcessor
+    //toasty
+    implementation Deps.toasty
+    //test
+    testImplementation Deps.junit
+    testImplementation Deps.coroutineTest
+    testImplementation Deps.mockitoCore
+    testImplementation Deps.androidXCoreTest
+    androidTestImplementation Deps.uiTestJunit
+    androidTestImplementation Deps.espresso
+}

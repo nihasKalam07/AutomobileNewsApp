@@ -1,0 +1,63 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdk BuildConfigVersions.compileSdkVersion
+
+    defaultConfig {
+        minSdk BuildConfigVersions.minSdkVersion
+        targetSdk BuildConfigVersions.targetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            buildConfigField "String", "BASE_URL", '"https://inshorts.deta.dev"'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            buildConfigField "String", "BASE_URL", '"https://inshorts.deta.dev"'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation project(path: ':domain')
+
+    implementation Deps.coreKtx
+    implementation Deps.appCompat
+    implementation Deps.material
+    //coroutine
+    implementation Deps.coroutines
+    //Retrofit
+    implementation Deps.retrofit
+    implementation Deps.retrofitGsonConverter
+    implementation Deps.okhttp
+    implementation Deps.okhttpLoggingInterceptor
+    //hilt
+    implementation Deps.hiltAndroid
+    kapt Deps.hiltAndroidXCompiler
+    kapt Deps.hiltACompiler
+    //test
+    testImplementation Deps.junit
+    testImplementation Deps.androidXCoreTest
+    testImplementation Deps.coroutineTest
+    testImplementation Deps.mockitoCore
+    androidTestImplementation Deps.uiTestJunit
+    androidTestImplementation Deps.espresso
+}
