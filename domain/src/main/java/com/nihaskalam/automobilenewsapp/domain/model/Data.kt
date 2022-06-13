@@ -4,6 +4,9 @@ import android.os.Parcelable
 import androidx.annotation.Keep
 import kotlinx.parcelize.Parcelize
 
+/**
+ * Data class to store an item of a Newsfeed
+ */
 @Keep
 @Parcelize
 data class Data(
@@ -16,4 +19,4 @@ data class Data(
     val time: String,
     val title: String,
     val url: String
-): Parcelable
+) : Parcelable
