@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="appBackground">#000000</color>
+    <color name="appBackground">#302525</color>
     <color name="headerTextColor">#673AB7</color>
     <color name="primaryTextColor">#FFFFFF</color>
     <color name="secondaryTextColor">#555454</color>
+    <color name="cardBackground">#201717</color>
 
 </resources>

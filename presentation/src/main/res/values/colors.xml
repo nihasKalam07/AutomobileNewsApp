@@ -12,5 +12,6 @@
     <color name="headerTextColor">#21212B</color>
     <color name="primaryTextColor">#21212B</color>
     <color name="secondaryTextColor">#555454</color>
+    <color name="cardBackground">#FFFFFF</color>
 
 </resources>
