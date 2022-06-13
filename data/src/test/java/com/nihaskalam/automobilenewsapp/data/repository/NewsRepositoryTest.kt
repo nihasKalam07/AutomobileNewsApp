@@ -17,6 +17,9 @@ import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnitRunner
 
+/**
+ * Test class for the Repository layer
+ */
 @ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)
 class NewsRepositoryTest {
@@ -42,7 +45,7 @@ class NewsRepositoryTest {
 
         //when
         repository.getNews().collect {
-            when(it){
+            when (it) {
                 is NetworkResult.ApiSuccess -> assert(it.newsFeed.data.size == 1)
             }
         }
@@ -57,7 +60,7 @@ class NewsRepositoryTest {
 
         //when
         repository.getNews().collect {
-            when(it){
+            when (it) {
                 is NetworkResult.ApiError -> assert(it.code == errorCode)
             }
         }
@@ -73,7 +76,7 @@ class NewsRepositoryTest {
 
         //when
         repository.getNews().collect {
-            when(it){
+            when (it) {
                 is NetworkResult.ApiException -> assert(it.e.message == msg)
             }
         }

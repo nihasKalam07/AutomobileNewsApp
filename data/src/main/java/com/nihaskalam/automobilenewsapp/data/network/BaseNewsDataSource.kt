@@ -5,8 +5,15 @@ import com.nihaskalam.automobilenewsapp.domain.model.NetworkResult.*
 import retrofit2.HttpException
 import retrofit2.Response
 
-abstract class BaseNewsDataSource () {
+/**
+ * Base class to handle api response
+ */
+abstract class BaseNewsDataSource() {
 
+    /**
+     * handle api response
+     * @param execute function to call Retrofit service
+     */
     suspend fun <T : Any> handleApi(
         execute: suspend () -> Response<T>
     ): NetworkResult<T> {

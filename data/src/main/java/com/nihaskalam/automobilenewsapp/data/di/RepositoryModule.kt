@@ -9,10 +9,13 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
+/**
+ * Repository module provides all the necessary dependencies for repository layer using Hilt
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 abstract class RepositoryModule {
     @Binds
     @Singleton
-    internal abstract fun bindCharsRepository(repository: NewsRepositoryImpl): NewsRepository
+    internal abstract fun bindNewsRepository(repository: NewsRepositoryImpl): NewsRepository
 }

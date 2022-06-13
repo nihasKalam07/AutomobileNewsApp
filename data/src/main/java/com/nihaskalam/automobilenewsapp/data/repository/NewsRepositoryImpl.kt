@@ -10,9 +10,14 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
+/**
+ * Class providing repository interface implementation
+ *
+ * @param newsDataSource Data source object to call Api
+ */
 class NewsRepositoryImpl @Inject constructor(
     private val newsDataSource: RetrofitNewsDataSource
-): NewsRepository {
+) : NewsRepository {
     override suspend fun getNews(): Flow<NetworkResult<NewsFeed>> {
         return flow {
             emit(NetworkResult.ApiLoading())

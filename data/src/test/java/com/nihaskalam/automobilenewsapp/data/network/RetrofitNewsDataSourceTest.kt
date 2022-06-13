@@ -3,10 +3,7 @@ package com.nihaskalam.automobilenewsapp.data.network
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.nihaskalam.automobilenewsapp.data.ApiService
 import com.nihaskalam.automobilenewsapp.data.TestData
-import com.nihaskalam.automobilenewsapp.data.network.RetrofitNewsDataSource
 import com.nihaskalam.automobilenewsapp.domain.model.NetworkResult
-import com.nihaskalam.automobilenewsapp.domain.model.NewsFeed
-import com.nihaskalam.automobilenewsapp.domain.repository.NewsRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import okhttp3.ResponseBody.Companion.toResponseBody
@@ -21,6 +18,9 @@ import org.mockito.exceptions.base.MockitoException
 import org.mockito.junit.MockitoJUnitRunner
 import retrofit2.Response
 
+/**
+ * Test class for the Retrofit data source
+ */
 @ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)
 class RetrofitNewsDataSourceTest {
