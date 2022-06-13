@@ -67,6 +67,8 @@ dependencies {
     annotationProcessor Deps.glideAnnotationProcessor
     //toasty
     implementation Deps.toasty
+    //tempo
+    implementation Deps.tempo
     //test
     testImplementation Deps.junit
     testImplementation Deps.coroutineTest

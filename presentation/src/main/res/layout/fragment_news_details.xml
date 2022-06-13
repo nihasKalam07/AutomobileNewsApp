@@ -57,11 +57,11 @@
             android:id="@+id/scrollView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:fillViewport="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/upButton"
-            android:fillViewport="true">
+            app:layout_constraintTop_toBottomOf="@id/upButton">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/newsContentCL"
@@ -104,7 +104,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="start"
                     android:padding="@dimen/dimen_16dp"
-                    android:text="@{item.author}"
+                    android:text="@{item.author + ` | ` + item.date}"
                     android:textAppearance="?attr/textAppearanceSubtitle2"
                     android:textColor="@color/secondaryTextColor"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -120,7 +120,7 @@
                     android:padding="@dimen/dimen_16dp"
                     android:text="@{item.content}"
                     android:textAppearance="?attr/textAppearanceSubtitle2"
-                    android:textColor="@color/secondaryTextColor"
+                    android:textColor="@color/primaryTextColor"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/authorTV"

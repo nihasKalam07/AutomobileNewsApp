@@ -62,6 +62,7 @@ object Versions {
     //miscellaneous
     const val glideVersion = "4.13.0"
     const val toastyVersion = "1.5.2"
+    const val tempoVersion = "0.7.0"
 }
 
 object Deps {
@@ -100,6 +101,7 @@ object Deps {
     const val glide = "com.github.bumptech.glide:glide:${Versions.glideVersion}"
     const val glideAnnotationProcessor = "com.github.bumptech.glide:compiler:${Versions.glideVersion}"
     const val toasty = "com.github.GrenderG:Toasty:${Versions.toastyVersion}"
+    const val tempo = "com.github.cesarferreira:tempo:${Versions.tempoVersion}"
 
     //testing
     const val junit = "junit:junit:${Versions.junitVersion}"
