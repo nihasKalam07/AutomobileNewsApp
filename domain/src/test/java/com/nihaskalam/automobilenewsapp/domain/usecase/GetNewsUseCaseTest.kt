@@ -1,6 +1,7 @@
 package com.nihaskalam.automobilenewsapp.domain.usecase
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.nihaskalam.automobilenewsapp.domain.model.Data
 import com.nihaskalam.automobilenewsapp.domain.model.NetworkResult
 import com.nihaskalam.automobilenewsapp.domain.model.NewsFeed
 import com.nihaskalam.automobilenewsapp.domain.repository.NewsRepository
@@ -34,7 +35,7 @@ class GetNewsUseCaseTest {
     }
 
     @Test
-    fun `Check GetNewsUseCase invoke getNews Of Repository`() = runBlocking {
+    fun `Check api success of GetNewsUseCase`() = runBlocking {
         //given
         val flow = flowOf(NetworkResult.ApiSuccess(testData))
         Mockito.`when`(repository.getNews()).thenReturn(flow)
@@ -43,11 +44,61 @@ class GetNewsUseCaseTest {
             val result = it as NetworkResult.ApiSuccess
             result.newsFeed
             //then
-            assert(result.newsFeed.data.isEmpty())
+            assert(result.newsFeed.data.size == 1)
+        }
+    }
+
+    @Test
+    fun `Check api Error of GetNewsUseCase`() = runBlocking {
+        //given
+        val flow = flowOf(NetworkResult.ApiError<NewsFeed>(403, "Error"))
+        Mockito.`when`(repository.getNews()).thenReturn(flow)
+        //when
+        getNewsUseCase().collect {
+            val result = it as NetworkResult.ApiError
+
+            //then
+            assert(result.code == 403)
+        }
+    }
+
+    @Test
+    fun `Check api Exception of GetNewsUseCase`() = runBlocking {
+        //given
+        val flow = flowOf(NetworkResult.ApiException<NewsFeed>(Throwable(message = "Error")))
+        Mockito.`when`(repository.getNews()).thenReturn(flow)
+        //when
+        getNewsUseCase().collect {
+            val result = it as NetworkResult.ApiException
+            //then
+            assert(result.e.message == "Error")
+        }
+    }
+
+    @Test
+    fun `Check api loading of GetNewsUseCase`() = runBlocking {
+        //given
+        val flow = flowOf(NetworkResult.ApiLoading<NewsFeed>())
+        Mockito.`when`(repository.getNews()).thenReturn(flow)
+        //when
+        getNewsUseCase().collect {
+            //then
+            assert(it is NetworkResult.ApiLoading)
         }
     }
 
     companion object {
-        val testData = NewsFeed(category = "Auto", data = listOf(), success = true)
+        private val data = Data(
+            author = "",
+            content = "",
+            date = "",
+            id = "",
+            imageUrl = "",
+            readMoreUrl = "",
+            time = "",
+            title = "",
+            url = ""
+        )
+        val testData = NewsFeed(category = "Auto", data = listOf(data), success = true)
     }
 }

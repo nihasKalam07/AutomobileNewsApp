@@ -2,6 +2,7 @@ package com.nihaskalam.automobilenewsapp.data.di
 
 import com.nihaskalam.automobilenewsapp.data.ApiService
 import com.nihaskalam.automobilenewsapp.data.BuildConfig
+import com.nihaskalam.automobilenewsapp.data.network.RetrofitNewsDataSource
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -53,4 +54,8 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideApiService(retrofit: Retrofit) = retrofit.create(ApiService::class.java)
+
+    @Provides
+    @Singleton
+    fun provideRetrofitNewsDataSource(apiService: ApiService) = RetrofitNewsDataSource(apiService)
 }
