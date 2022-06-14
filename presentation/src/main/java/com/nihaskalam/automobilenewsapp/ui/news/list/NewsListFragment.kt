@@ -77,6 +77,9 @@ class NewsListFragment : BaseFragment() {
         }
     }
 
+    /**
+     * Recycler view item click listener
+     */
     private val onNewsItemClick: (newsItem: Data, view: View) -> Unit =
         { newsItem, _ ->
             val directions = NewsListFragmentDirections.actionNewsToDetails(newsItem)

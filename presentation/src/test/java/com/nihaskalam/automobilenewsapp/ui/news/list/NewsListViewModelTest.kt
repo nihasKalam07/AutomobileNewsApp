@@ -19,7 +19,7 @@ import org.mockito.Mockito.doReturn
 import org.mockito.junit.MockitoJUnitRunner
 
 /**
- * View model test class
+ * News list View model test class
  */
 @ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)
