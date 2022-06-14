@@ -10,13 +10,29 @@ import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 
+/**
+ * Recycler view adapter to list all the newsfeed.
+ *
+ * @property list news list
+ * @property onItemClicked news item click listener
+ */
 class NewsAdapter @AssistedInject constructor(
     @Assisted val list: ArrayList<Data>,
     @Assisted val onItemClicked: (newsItem: Data, view: View) -> Unit
 ) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
+    /**
+     * Factory method to inject Adapter instance via assisted injection
+     */
     @AssistedFactory
     interface NewsAdapterFactory {
+        /**
+         * Method returning adapter instance by talking argiments
+         * @param list data list
+         * @param onItemClicked news item click listener
+         *
+         * @return News adapter instance
+         */
         fun create(
             list: ArrayList<Data>,
             onItemClicked: (newsItem: Data, view: View) -> Unit
@@ -37,7 +53,7 @@ class NewsAdapter @AssistedInject constructor(
     override fun getItemCount() = list.size
 
     /**
-     * Method to update the data set of adapter.
+     * Method to update the news list of adapter.
      */
     fun update(newsList: List<Data>) {
         list.clear()

@@ -12,16 +12,22 @@ import com.nihaskalam.automobilenewsapp.ui.base.BaseFragment
 import com.nihaskalam.automobilenewsapp.ui.databinding.FragmentNewsDetailsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
+/**
+ * Fragment to display details of a Newsfeed
+ */
 @AndroidEntryPoint
 class NewsDetailsFragment : BaseFragment() {
     private lateinit var binding: FragmentNewsDetailsBinding
 
+    /**
+     * Arguments getting vis safe args
+     */
     val args: NewsDetailsFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View= FragmentNewsDetailsBinding.inflate(inflater, container, false).let {
+    ): View = FragmentNewsDetailsBinding.inflate(inflater, container, false).let {
         binding = it
         with(it) {
             header = getString(R.string.ui_label_details_page_header)
@@ -33,7 +39,7 @@ class NewsDetailsFragment : BaseFragment() {
     }
 
     override fun initUi() {
-        binding.upButton.setOnClickListener{
+        binding.upButton.setOnClickListener {
             findNavController().popBackStack()
         }
     }

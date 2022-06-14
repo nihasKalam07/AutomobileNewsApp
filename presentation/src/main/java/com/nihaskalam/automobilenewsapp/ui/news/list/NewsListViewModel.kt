@@ -11,8 +11,13 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+/**
+ * View model for the news list screen
+ *
+ * @property getNews get news use case to fetch newsfeed.
+ */
 @HiltViewModel
-class NewsListViewModel @Inject constructor(private val getNews: GetNewsUseCase): BaseViewModel() {
+class NewsListViewModel @Inject constructor(private val getNews: GetNewsUseCase) : BaseViewModel() {
 
     private val _newsObj = MutableLiveData<NetworkResult<NewsFeed>>()
     val newsObj: LiveData<NetworkResult<NewsFeed>> = _newsObj

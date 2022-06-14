@@ -8,6 +8,13 @@ enum class ToastType {
     SUCCESS, ERROR, NORMAL
 }
 
+/**
+ * Extension method to show toast messages using {@}Toasty
+ *
+ * @param msg message to show
+ * @param type Type of toast message
+ * @param length length of display time
+ */
 fun Context.showToasts(
     msg: String,
     type: ToastType = ToastType.NORMAL,

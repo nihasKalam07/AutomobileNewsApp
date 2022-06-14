@@ -3,9 +3,10 @@ package com.nihaskalam.automobilenewsapp.ui.base
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
+/**
+ * Base fragment to provide common functionalities
+ */
 abstract class BaseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -14,6 +15,13 @@ abstract class BaseFragment : Fragment() {
         observeData()
     }
 
+    /**
+     * Initializing UI components
+     */
     abstract fun initUi()
+
+    /**
+     * Method to observe livedata of viewmodel
+     */
     abstract fun observeData()
 }

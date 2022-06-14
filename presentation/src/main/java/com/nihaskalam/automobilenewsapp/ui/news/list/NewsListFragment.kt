@@ -15,9 +15,13 @@ import com.nihaskalam.automobilenewsapp.ui.showToasts
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
+/**
+ * Fragment to list the news list
+ */
 @AndroidEntryPoint
 class NewsListFragment : BaseFragment() {
     private val viewModel: NewsListViewModel by viewModels()
+
     @Inject
     lateinit var newsAdapterFactory: NewsAdapter.NewsAdapterFactory
 
