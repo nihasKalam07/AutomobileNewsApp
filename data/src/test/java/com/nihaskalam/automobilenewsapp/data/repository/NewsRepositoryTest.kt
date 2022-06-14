@@ -47,6 +47,7 @@ class NewsRepositoryTest {
         repository.getNews().collect {
             when (it) {
                 is NetworkResult.ApiSuccess -> assert(it.newsFeed.data.size == 1)
+                else ->{}
             }
         }
     }
@@ -62,6 +63,7 @@ class NewsRepositoryTest {
         repository.getNews().collect {
             when (it) {
                 is NetworkResult.ApiError -> assert(it.code == errorCode)
+                else -> {}
             }
         }
     }
@@ -78,6 +80,7 @@ class NewsRepositoryTest {
         repository.getNews().collect {
             when (it) {
                 is NetworkResult.ApiException -> assert(it.e.message == msg)
+                else -> {}
             }
         }
     }

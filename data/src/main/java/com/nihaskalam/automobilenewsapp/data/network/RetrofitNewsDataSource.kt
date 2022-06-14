@@ -14,14 +14,6 @@ class RetrofitNewsDataSource @Inject constructor(
     private val apiService: ApiService
 ) : BaseNewsDataSource() {
     suspend fun getNews(): NetworkResult<NewsFeed> {
-        return handleApi { apiService.getNews(CATEGORY) }
-    }
-
-    companion object {
-        /**
-         * category should be selected and passed from the user end. But, since we are showing only
-         * automobile news, for the sake of simplicity, passing it from here.
-         */
-        const val CATEGORY = "automobile"
+        return handleApi { apiService.getNews() }
     }
 }

@@ -14,5 +14,5 @@ const val GET_NEWS_URL = "/news"
 interface ApiService {
 
     @GET(GET_NEWS_URL)
-    suspend fun getNews(@Query(CATEGORY) category: String): Response<NewsFeed>
+    suspend fun getNews(@Query(CATEGORY) category: String = "automobile"): Response<NewsFeed>
 }
