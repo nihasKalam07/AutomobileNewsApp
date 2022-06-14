@@ -23,13 +23,13 @@ fun Context.showToasts(
 
     when (type) {
         ToastType.SUCCESS -> {
-            Toasty.success(this, msg, Toast.LENGTH_SHORT, true).show()
+            Toasty.success(this, msg, length, true).show()
         }
         ToastType.ERROR -> {
-            Toasty.error(this, msg, Toast.LENGTH_SHORT, true).show()
+            Toasty.error(this, msg, length, true).show()
         }
         ToastType.NORMAL -> {
-            Toasty.normal(this, msg).show()
+            Toasty.normal(this, msg, length).show()
         }
     }
 }
