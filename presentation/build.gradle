@@ -17,7 +17,7 @@ android {
         versionCode BuildConfigVersions.versionCode
         versionName BuildConfigVersions.versionName
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.nihaskalam.automobilenewsapp.ui.HiltTestRunner"
     }
 
     buildTypes {
@@ -61,7 +61,7 @@ dependencies {
     implementation Deps.hiltAndroid
     kapt Deps.hiltAndroidXCompiler
     implementation Deps.hiltViewModel
-    kapt Deps.hiltACompiler
+    kapt Deps.hiltCompiler
     //glide
     implementation Deps.glide
     annotationProcessor Deps.glideAnnotationProcessor
@@ -69,6 +69,11 @@ dependencies {
     implementation Deps.toasty
     //tempo
     implementation Deps.tempo
+    //Retrofit
+    implementation Deps.retrofit
+    implementation Deps.retrofitGsonConverter
+    implementation Deps.okhttp
+    implementation Deps.okhttpLoggingInterceptor
     //test
     testImplementation Deps.junit
     testImplementation Deps.coroutineTest
@@ -76,4 +81,13 @@ dependencies {
     testImplementation Deps.androidXCoreTest
     androidTestImplementation Deps.uiTestJunit
     androidTestImplementation Deps.espresso
+    androidTestImplementation Deps.testRunner
+    androidTestImplementation Deps.testRule
+    androidTestImplementation Deps.extTruth
+    androidTestImplementation Deps.mockWebServer
+    androidTestImplementation Deps.idlingResource
+    androidTestImplementation Deps.testCoreKtx
+    androidTestImplementation Deps.contrib
+    androidTestImplementation Deps.hiltTesting
+    kaptAndroidTest Deps.hiltCompiler
 }

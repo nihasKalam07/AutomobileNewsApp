@@ -40,7 +40,7 @@ dependencies {
     //hilt
     implementation Deps.hiltAndroid
     kapt Deps.hiltAndroidXCompiler
-    kapt Deps.hiltACompiler
+    kapt Deps.hiltCompiler
     //test
     testImplementation Deps.junit
     testImplementation Deps.coroutineTest

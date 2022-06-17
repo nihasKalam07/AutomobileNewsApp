@@ -15,9 +15,12 @@ object ClasspathVersions {
 
 object ClassPaths {
     const val gradlePath = "com.android.tools.build:gradle:${ClasspathVersions.gradleVersion}"
-    const val kotlinGradlePath = "org.jetbrains.kotlin:kotlin-gradle-plugin:${ClasspathVersions.kotlinGradleVersion}"
-    const val hiltPath = "com.google.dagger:hilt-android-gradle-plugin:${ClasspathVersions.hiltGradleVersion}"
-    const val safeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:${ClasspathVersions.safeArgsVersion}"
+    const val kotlinGradlePath =
+        "org.jetbrains.kotlin:kotlin-gradle-plugin:${ClasspathVersions.kotlinGradleVersion}"
+    const val hiltPath =
+        "com.google.dagger:hilt-android-gradle-plugin:${ClasspathVersions.hiltGradleVersion}"
+    const val safeArgs =
+        "androidx.navigation:navigation-safe-args-gradle-plugin:${ClasspathVersions.safeArgsVersion}"
 }
 
 object Versions {
@@ -40,7 +43,7 @@ object Versions {
     //retrofit
     const val retrofitVersion = "2.9.0"
     const val gsonConverterFactoryVersion = "2.9.0"
-    const val okhttpVersion = "4.9.0"
+    const val okhttpVersion = "4.9.3"
     const val okhttpLoggingInterceptorVersion = "4.8.0"
 
     //hilt
@@ -58,7 +61,14 @@ object Versions {
 
     //android test libs
     const val uiJunitVersion = "1.1.3"
-    const val espresso = "3.4.0"
+    const val espressoVersion = "3.4.0"
+    const val testRunnerVersion = "1.4.0"
+    const val testRuleVersion = "1.4.0"
+    const val extTruthVersion = "1.4.0"
+    const val mockWebServerVersion = "4.9.3"
+    const val idlingResourceVersion = "1.0.0"
+    const val testCoreKtxVersion = "1.4.0"
+    const val contribVersion = "3.4.0"
 
     //miscellaneous
     const val glideVersion = "4.13.0"
@@ -69,47 +79,70 @@ object Versions {
 object Deps {
 
     //material
-    const val material =  "com.google.android.material:material:${Versions.materialVersion}"
+    const val material = "com.google.android.material:material:${Versions.materialVersion}"
 
     //androidx
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtxVersion}"
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompatVersion}"
-    const val constraintLayout =  "androidx.constraintlayout:constraintlayout:${Versions.constraintLayoutVersion}"
-    const val liveData =  "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.liveDataVersion}"
-    const val viewModel =  "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModelVersion}"
-    const val lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycleExtVersion}"
-    const val swipeRefreshLayout = "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swipeRefreshLayoutVersion}"
-    const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigationFragmentKtxVersion}"
-    const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.navigationUiKtxVersion}"
-    const val activityKtx ="androidx.activity:activity-ktx:${Versions.activityKtxVersion}"
+    const val constraintLayout =
+        "androidx.constraintlayout:constraintlayout:${Versions.constraintLayoutVersion}"
+    const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.liveDataVersion}"
+    const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModelVersion}"
+    const val lifecycleExtensions =
+        "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycleExtVersion}"
+    const val swipeRefreshLayout =
+        "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swipeRefreshLayoutVersion}"
+    const val navigationFragment =
+        "androidx.navigation:navigation-fragment-ktx:${Versions.navigationFragmentKtxVersion}"
+    const val navigationUi =
+        "androidx.navigation:navigation-ui-ktx:${Versions.navigationUiKtxVersion}"
+    const val activityKtx = "androidx.activity:activity-ktx:${Versions.activityKtxVersion}"
 
     //kotlin
-    const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutinesVersion}"
+    const val coroutines =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutinesVersion}"
 
     //Retrofit
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofitVersion}"
-    const val retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.gsonConverterFactoryVersion}"
+    const val retrofitGsonConverter =
+        "com.squareup.retrofit2:converter-gson:${Versions.gsonConverterFactoryVersion}"
     const val okhttp = "com.squareup.okhttp3:okhttp:${Versions.okhttpVersion}"
-    const val okhttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttpLoggingInterceptorVersion}"
+    const val okhttpLoggingInterceptor =
+        "com.squareup.okhttp3:logging-interceptor:${Versions.okhttpLoggingInterceptorVersion}"
 
     //hilt
     const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hiltAndroidVersion}"
-    const val hiltACompiler = "com.google.dagger:hilt-android-compiler:${Versions.hiltCompilerVersion}"
-    const val hiltAndroidXCompiler = "androidx.hilt:hilt-compiler:${Versions.hiltAndroidXCompilerVersion}"
-    const val hiltViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltViewModelVersion}"
+    const val hiltCompiler =
+        "com.google.dagger:hilt-android-compiler:${Versions.hiltCompilerVersion}"
+    const val hiltAndroidXCompiler =
+        "androidx.hilt:hilt-compiler:${Versions.hiltAndroidXCompilerVersion}"
+    const val hiltViewModel =
+        "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltViewModelVersion}"
     const val hiltTesting = "com.google.dagger:hilt-android-testing:${Versions.hiltTestingVersion}"
 
     //miscellaneous
     const val glide = "com.github.bumptech.glide:glide:${Versions.glideVersion}"
-    const val glideAnnotationProcessor = "com.github.bumptech.glide:compiler:${Versions.glideVersion}"
+    const val glideAnnotationProcessor =
+        "com.github.bumptech.glide:compiler:${Versions.glideVersion}"
     const val toasty = "com.github.GrenderG:Toasty:${Versions.toastyVersion}"
     const val tempo = "com.github.cesarferreira:tempo:${Versions.tempoVersion}"
 
     //testing
     const val junit = "junit:junit:${Versions.junitVersion}"
     const val mockitoCore = "org.mockito:mockito-core:${Versions.mockitoCoreVersion}"
-    const val coroutineTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.testCoroutinesVersion}"
+    const val coroutineTest =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.testCoroutinesVersion}"
     const val androidXCoreTest = "androidx.arch.core:core-testing:${Versions.androidXCoreTest}"
-    const val uiTestJunit= "androidx.test.ext:junit:${Versions.uiJunitVersion}"
-    const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
+
+    //UI testing
+    const val uiTestJunit = "androidx.test.ext:junit:${Versions.uiJunitVersion}"
+    const val espresso = "androidx.test.espresso:espresso-core:${Versions.espressoVersion}"
+    const val testRunner = "androidx.test:runner:${Versions.testRunnerVersion}"
+    const val testRule = "androidx.test:rules:${Versions.testRuleVersion}"
+    const val extTruth = "androidx.test.ext:truth:${Versions.extTruthVersion}"
+    const val mockWebServer = "com.squareup.okhttp3:mockwebserver:${Versions.mockWebServerVersion}"
+    const val idlingResource =
+        "com.jakewharton.espresso:okhttp3-idling-resource:${Versions.idlingResourceVersion}"
+    const val testCoreKtx = "androidx.test:core-ktx:${Versions.testCoreKtxVersion}"
+    const val contrib = "androidx.test.espresso:espresso-contrib:${Versions.contribVersion}"
 }
