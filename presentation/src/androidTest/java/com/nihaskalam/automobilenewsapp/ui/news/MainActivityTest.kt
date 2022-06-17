@@ -73,6 +73,9 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 import javax.inject.Singleton
 
+/**
+ * Instrumentation tests for MainActivity
+ */
 @HiltAndroidTest
 @UninstallModules(NetworkModule::class)
 class MainActivityTest {
