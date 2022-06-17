@@ -11,7 +11,8 @@ A sample android app to demonstrate MVVM multi-module Clean architecture pattern
 - Data binding and View binding
 - Jetpack Navigation
 - Hilt - Dependency Injection
-- Unit testing using Junit and Mockito
+- Unit tests - Junit and Mockito
+- Instrumentation tests - Espresso and MockWebServer
 - Retrofit for Network calls
 - Glide for image loading
 - Toasty to show toasts
