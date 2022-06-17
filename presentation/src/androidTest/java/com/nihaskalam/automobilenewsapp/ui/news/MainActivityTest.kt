@@ -102,7 +102,7 @@ class MainActivityTest {
         IdlingRegistry.getInstance().unregister(okHttp3IdlingResource)
     }
 
-    private fun getResourceString(id: Int): String? {
+    private fun getResourceString(id: Int): String {
         val targetContext: Context = InstrumentationRegistry.getInstrumentation().targetContext
         return targetContext.resources.getString(id)
     }
