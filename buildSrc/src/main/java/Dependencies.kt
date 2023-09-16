@@ -26,6 +26,7 @@ object ClassPaths {
 object Versions {
     //kotlin
     const val coroutinesVersion = "1.6.2"
+    const val lifecycle_version = "2.6.1"
 
     //androidx libs
     const val coreKtxVersion = "1.7.0"
@@ -101,6 +102,8 @@ object Deps {
     //kotlin
     const val coroutines =
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutinesVersion}"
+    const val lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle_version}"
+    const val coroutineCore =  "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutinesVersion}"
 
     //Retrofit
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofitVersion}"
