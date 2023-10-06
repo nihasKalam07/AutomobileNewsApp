@@ -1,7 +1,6 @@
 package com.nihaskalam.automobilenewsapp.ui.news.list
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.lifecycle.LiveData
 import com.nihaskalam.automobilenewsapp.domain.model.NetworkResult
 import com.nihaskalam.automobilenewsapp.domain.model.NewsFeed
 import com.nihaskalam.automobilenewsapp.domain.usecase.GetNewsUseCase
@@ -28,9 +27,6 @@ class NewsListViewModelTest {
     lateinit var viewmodel: NewsListViewModel
 
     @Mock
-    lateinit var newsFeed: LiveData<NetworkResult<NewsFeed>>
-
-    @Mock
     private lateinit var useCase: GetNewsUseCase
 
     @get:Rule
@@ -42,7 +38,6 @@ class NewsListViewModelTest {
     @Before
     fun setUp() {
         viewmodel = NewsListViewModel(useCase)
-        newsFeed = viewmodel.newsObj
     }
 
     @Test
